@@ -1,10 +1,9 @@
-const { users } = require('../index');
-const db = require('../data/db');
+const { reset, users } = require('../index');
 
 describe('users', function () {
 
   afterEach(function () {
-    db.reset();
+    reset();
   });
 
   it('should register a new user given an email and hashed password', function (done) {
