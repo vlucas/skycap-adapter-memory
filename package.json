@@ -1,0 +1,19 @@
+{
+  "name": "skycap-adapter-memory",
+  "version": "1.0.0",
+  "description": "In-memory adapter for Skycap (testing/dev only)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.0.4"
+  },
+  "dependencies": {
+    "eslint": "^4.14.0",
+    "memorystore": "^1.6.0"
+  }
+}
