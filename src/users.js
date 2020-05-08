@@ -16,13 +16,15 @@ function findByEmail(email) {
 /**
  * Register a new user
  *
+ * @param name {String}
  * @param email {String}
  * @param hashedPassword {String}
+ * @param username {String}
  * @param profileData {Object}
  *
  * @return {Promise}
  */
-function register(email, hashedPassword, profileData = {}) {
+function register(name, email, hashedPassword, username = null, profileData = {}) {
   return findByEmail(email)
     .then(user => {
       // Ensure user does not already exist
@@ -32,8 +34,10 @@ function register(email, hashedPassword, profileData = {}) {
 
       let NOW = new Date();
       let storedUser = Object.assign({}, profileData, {
+        name,
         email,
         password: hashedPassword,
+        username,
         dt_created: NOW,
         dt_updated: NOW
       });
